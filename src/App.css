@@ -53,16 +53,29 @@
   }
 }
 
+.cuaca-temp {
+  font-size: 64px;
+}
+
+.cuaca-desc {
+  font-size: 20px;
+}
+
+.cuaca-label {
+  color: #c9a84c;
+  font-size: 14px;
+}
+
 @media (max-width: 480px) {
   .cuaca-temp {
-    font-size: 48px !important;
+    font-size: 42px !important;
   }
 
   .cuaca-desc {
-    font-size: 16px !important;
+    font-size: 15px !important;
   }
 
   .cuaca-label {
-    font-size: 13px !important;
+    font-size: 12px !important;
   }
 }
