@@ -148,17 +148,17 @@ function App() {
 
       {cuaca && (
         <div style={{
-          background: 'rgba(255,255,255,0.1)',
-          backdropFilter: 'blur(10px)',
-          padding: '20px 15px',
-          borderRadius: '16px',
-          textAlign: 'center',
-          width: '90%',
-          maxWidth: '400px',
-          border: '1px solid rgba(255,255,255,0.2)',
-          position: 'relative',
-          zIndex: 10
-        }}>
+  background: 'rgba(255,255,255,0.1)',
+  backdropFilter: 'blur(10px)',
+  padding: '20px 15px',
+  borderRadius: '16px',
+  textAlign: 'center',
+  width: '80%',
+  maxWidth: '320px',
+  border: '1px solid rgba(255,255,255,0.2)',
+  position: 'relative',
+  zIndex: 10
+}}>
           <h2 style={{ color: '#fff', marginBottom: '5px' }}>{cuaca.name}, {cuaca.sys.country}</h2>
           {theme.iconKecil}
           <h1 className="cuaca-temp" style={{ margin: '0' }}>
