@@ -39,3 +39,16 @@
   transform: translateY(0px);
   box-shadow: 0 0 10px rgba(201, 168, 76, 0.4);
 }
+
+@media (max-width: 480px) {
+  .search-input {
+    width: 150px;
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .search-button {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}

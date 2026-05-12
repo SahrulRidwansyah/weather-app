@@ -1,4 +1,5 @@
 import './App.css';
+
 import { useState, useEffect } from 'react';
 import { WiDaySunny, WiRain, WiCloudy, WiThunderstorm, WiSnow, WiFog, WiDayCloudy } from 'react-icons/wi';
 
@@ -105,7 +106,6 @@ function App() {
       overflow: 'hidden'
     }}>
 
-      {/* Icon background gede */}
       <div style={{
         position: 'absolute',
         top: '50px',
@@ -121,7 +121,15 @@ function App() {
          web cuaca
       </h1>
 
-      <div style={{ display: 'flex', gap: '10px', marginBottom: '30px', position: 'relative', zIndex: 10 }}>
+      <div style={{ 
+  display: 'flex', 
+  gap: '10px', 
+  marginBottom: '30px', 
+  position: 'relative', 
+  zIndex: 10,
+  width: '90%',       
+  justifyContent: 'center' 
+}}>
         <input
   type="text"
   placeholder="Masukkan nama kota..."
@@ -148,6 +156,8 @@ function App() {
           padding: '30px',
           borderRadius: '16px',
           textAlign: 'center',
+          width: '90%',
+          maxWidth: '400px',
           minWidth: '300px',
           border: '1px solid rgba(255,255,255,0.2)',
           position: 'relative',
@@ -155,7 +165,9 @@ function App() {
         }}>
           <h2 style={{ color: '#fff', marginBottom: '5px' }}>{cuaca.name}, {cuaca.sys.country}</h2>
           {theme.iconKecil}
-          <h1 style={{ fontSize: '64px', margin: '0' }}>{Math.round(cuaca.main.temp)}°C</h1>
+          <h1 style={{ fontSize: 'clamp(40px, 10vw, 64px)', margin: '0' }}>
+  {Math.round(cuaca.main.temp)}°C
+</h1>
           <p style={{ fontSize: '20px', textTransform: 'capitalize', opacity: 0.9 }}>{cuaca.weather[0].description}</p>
           <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '20px' }}>
             <div>
