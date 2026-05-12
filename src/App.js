@@ -118,32 +118,29 @@ function App() {
       </div>
 
       <h1 style={{ color: '#fff', marginBottom: '10px', fontSize: '28px', position: 'relative', zIndex: 10 }}>
-         web cuaca
+        🌤️ web cuaca
       </h1>
 
-      <div style={{ 
-  display: 'flex', 
-  gap: '10px', 
-  marginBottom: '30px', 
-  position: 'relative', 
-  zIndex: 10,
-  width: '90%',       
-  justifyContent: 'center' 
-}}>
+      <div style={{
+        display: 'flex',
+        gap: '10px',
+        marginBottom: '30px',
+        position: 'relative',
+        zIndex: 10,
+        width: '90%',
+        justifyContent: 'center'
+      }}>
         <input
-  type="text"
-  placeholder="Masukkan nama kota..."
-  value={kota}
-  onChange={(e) => setKota(e.target.value)}
-  onKeyPress={(e) => e.key === 'Enter' && cariCuaca()}
-  className="search-input"
-/>
-<button
-  onClick={cariCuaca}
-  className="search-button"
->
-  Cari
-</button>
+          type="text"
+          placeholder="Masukkan nama kota..."
+          value={kota}
+          onChange={(e) => setKota(e.target.value)}
+          onKeyPress={(e) => e.key === 'Enter' && cariCuaca()}
+          className="search-input"
+        />
+        <button onClick={cariCuaca} className="search-button">
+          Cari
+        </button>
       </div>
 
       {loading && <p style={{ position: 'relative', zIndex: 10 }}>Loading...</p>}
@@ -158,28 +155,29 @@ function App() {
           textAlign: 'center',
           width: '90%',
           maxWidth: '400px',
-          minWidth: '300px',
           border: '1px solid rgba(255,255,255,0.2)',
           position: 'relative',
           zIndex: 10
         }}>
           <h2 style={{ color: '#fff', marginBottom: '5px' }}>{cuaca.name}, {cuaca.sys.country}</h2>
           {theme.iconKecil}
-          <h1 style={{ fontSize: 'clamp(40px, 10vw, 64px)', margin: '0' }}>
-  {Math.round(cuaca.main.temp)}°C
-</h1>
-          <p style={{ fontSize: '20px', textTransform: 'capitalize', opacity: 0.9 }}>{cuaca.weather[0].description}</p>
+          <h1 className="cuaca-temp" style={{ margin: '0' }}>
+            {Math.round(cuaca.main.temp)}°C
+          </h1>
+          <p className="cuaca-desc" style={{ textTransform: 'capitalize', opacity: 0.9 }}>
+            {cuaca.weather[0].description}
+          </p>
           <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '20px' }}>
             <div>
-              <p style={{ color: '#c9a84c', margin: '0' }}>Kelembaban</p>
+              <p className="cuaca-label" style={{ margin: '0' }}>Kelembaban</p>
               <p style={{ margin: '5px 0' }}>{cuaca.main.humidity}%</p>
             </div>
             <div>
-              <p style={{ color: '#c9a84c', margin: '0' }}>Angin</p>
+              <p className="cuaca-label" style={{ margin: '0' }}>Angin</p>
               <p style={{ margin: '5px 0' }}>{cuaca.wind.speed} m/s</p>
             </div>
             <div>
-              <p style={{ color: '#c9a84c', margin: '0' }}>Terasa</p>
+              <p className="cuaca-label" style={{ margin: '0' }}>Terasa</p>
               <p style={{ margin: '5px 0' }}>{Math.round(cuaca.main.feels_like)}°C</p>
             </div>
           </div>
